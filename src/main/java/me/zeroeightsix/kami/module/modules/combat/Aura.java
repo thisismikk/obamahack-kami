@@ -2,7 +2,7 @@ package me.zeroeightsix.kami.module.modules.combat;
 
 import me.zeroeightsix.kami.module.Module;
 import me.zeroeightsix.kami.module.ModuleManager;
-import me.zeroeightsix.kami.module.modules.misc.AutoTool;
+import me.zeroeightsix.kami.module.modules.hidden.AutoTool;
 import me.zeroeightsix.kami.setting.Setting;
 import me.zeroeightsix.kami.setting.Settings;
 import me.zeroeightsix.kami.util.EntityUtil;

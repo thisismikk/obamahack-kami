@@ -1,4 +1,4 @@
-package me.zeroeightsix.kami.module.modules.render;
+package me.zeroeightsix.kami.module.modules.hidden;
 
 import me.zeroeightsix.kami.command.Command;
 import me.zeroeightsix.kami.module.Module;
@@ -11,7 +11,7 @@ import net.minecraft.scoreboard.ScorePlayerTeam;
 /**
  * Created by 086 on 8/04/2018.
  */
-@Module.Info(name = "ExtraTab", description = "Expands the player tab menu", category = Module.Category.RENDER)
+@Module.Info(name = "ExtraTab", description = "Expands the player tab menu", category = Module.Category.HIDDEN)
 public class ExtraTab extends Module {
 
     public Setting<Integer> tabSize = register(Settings.integerBuilder("Players").withMinimum(1).withValue(80).build());

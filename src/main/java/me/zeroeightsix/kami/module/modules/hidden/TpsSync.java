@@ -1,11 +1,11 @@
-package me.zeroeightsix.kami.module.modules.player;
+package me.zeroeightsix.kami.module.modules.hidden;
 
 import me.zeroeightsix.kami.module.Module;
 
 /**
  * Created by 086 on 9/04/2018.
  */
-@Module.Info(name = "TpsSync", description = "Synchronizes some actions with the server TPS", category = Module.Category.PLAYER)
+@Module.Info(name = "TpsSync", description = "Synchronizes some actions with the server TPS", category = Module.Category.HIDDEN)
 public class TpsSync extends Module {
 
     private static TpsSync INSTANCE;

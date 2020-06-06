@@ -75,6 +75,7 @@ public class Module {
         MISC("Misc", false),
         PLAYER("Player", false),
         MOVEMENT("Movement", false),
+        CHAT("Chat", false),
         HIDDEN("Hidden", true);
 
         boolean hidden;

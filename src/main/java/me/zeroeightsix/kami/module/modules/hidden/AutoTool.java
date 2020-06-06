@@ -1,4 +1,4 @@
-package me.zeroeightsix.kami.module.modules.misc;
+package me.zeroeightsix.kami.module.modules.hidden;
 
 import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listener;
@@ -16,7 +16,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 /**
  * Created by 086 on 2/10/2018.
  */
-@Module.Info(name = "AutoTool", description = "Automatically switch to the best tools when mining or attacking", category = Module.Category.MISC)
+@Module.Info(name = "AutoTool", description = "Automatically switch to the best tools when mining or attacking", category = Module.Category.HIDDEN)
 public class AutoTool extends Module {
 
     @EventHandler

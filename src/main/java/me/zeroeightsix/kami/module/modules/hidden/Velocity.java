@@ -1,4 +1,4 @@
-package me.zeroeightsix.kami.module.modules.movement;
+package me.zeroeightsix.kami.module.modules.hidden;
 
 import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listener;
@@ -14,7 +14,7 @@ import net.minecraft.network.play.server.SPacketExplosion;
 /**
  * Created by 086 on 16/11/2017.
  */
-@Module.Info(name = "Velocity", description = "Modify knockback impact", category = Module.Category.MOVEMENT)
+@Module.Info(name = "Velocity", description = "Modify knockback impact", category = Module.Category.HIDDEN)
 public class Velocity extends Module {
 
     private Setting<Float> horizontal = register(Settings.f("Horizontal", 0));

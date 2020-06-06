@@ -1,4 +1,4 @@
-package me.zeroeightsix.kami.module.modules.render;
+package me.zeroeightsix.kami.module.modules.hidden;
 
 import me.zeroeightsix.kami.module.Module;
 import me.zeroeightsix.kami.setting.Setting;
@@ -10,7 +10,7 @@ import net.minecraft.entity.player.EntityPlayer;
 /**
  * Created by 086 on 12/12/2017.
  */
-@Module.Info(name = "Chams", category = Module.Category.RENDER, description = "See entities through walls")
+@Module.Info(name = "Chams", category = Module.Category.HIDDEN, description = "See entities through walls")
 public class Chams extends Module {
 
     private static Setting<Boolean> players = Settings.b("Players", true);

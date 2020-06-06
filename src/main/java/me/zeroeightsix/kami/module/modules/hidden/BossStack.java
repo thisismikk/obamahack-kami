@@ -1,4 +1,4 @@
-package me.zeroeightsix.kami.module.modules.render;
+package me.zeroeightsix.kami.module.modules.hidden;
 
 import me.zeroeightsix.kami.module.Module;
 import me.zeroeightsix.kami.setting.Setting;
@@ -19,7 +19,7 @@ import java.util.UUID;
 /**
  * Created by 086 on 25/01/2018.
  */
-@Module.Info(name = "BossStack", description = "Modify the boss health GUI to take up less space", category = Module.Category.MISC)
+@Module.Info(name = "BossStack", description = "Modify the boss health GUI to take up less space", category = Module.Category.HIDDEN)
 public class BossStack extends Module {
 
     private static Setting<BossStackMode> mode = Settings.e("Mode", BossStackMode.STACK);

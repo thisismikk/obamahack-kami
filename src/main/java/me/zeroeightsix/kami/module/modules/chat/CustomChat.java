@@ -1,4 +1,4 @@
-package me.zeroeightsix.kami.module.modules.misc;
+package me.zeroeightsix.kami.module.modules.chat;
 
 import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listener;
@@ -11,12 +11,12 @@ import net.minecraft.network.play.client.CPacketChatMessage;
 /**
  * Created by 086 on 8/04/2018.
  */
-@Module.Info(name = "CustomChat", category = Module.Category.MISC, description = "Modifies your chat messages")
+@Module.Info(name = "CustomChat", category = Module.Category.CHAT, description = "Modifies your chat messages")
 public class CustomChat extends Module {
 
     private Setting<Boolean> commands = register(Settings.b("Commands", false));
 
-    private final String KAMI_SUFFIX = " \u23D0 \u1D0B\u1D00\u1D0D\u026A";
+    private final String KAMI_SUFFIX = " \u007c \u1d0f\u0299\u1d00\u1d0d\u1d00\u029c\u1d00\u1d04\u1d0b";
 
     @EventHandler
     public Listener<PacketEvent.Send> listener = new Listener<>(event -> {
