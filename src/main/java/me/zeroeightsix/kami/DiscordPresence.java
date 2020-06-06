@@ -48,7 +48,7 @@ public class DiscordPresence {
             DiscordPresence.presence.details = "main menu";
         }
         DiscordPresence.presence.state = "";
-        DiscordPresence.presence.largeImageKey = "kami";
+        DiscordPresence.presence.largeImageKey = "obamahack2";
         DiscordPresence.presence.largeImageText = "poggers";
 
         DiscordPresence.rpc.Discord_UpdatePresence(DiscordPresence.presence);
