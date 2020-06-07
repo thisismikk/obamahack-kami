@@ -192,7 +192,7 @@ public class KamiGUI extends GUI {
 
         ArrayList<Frame> frames = new ArrayList<>();
 
-        Frame frame = new Frame(getTheme(), new Stretcherlayout(1), "Active modules");
+        Frame frame = new Frame(getTheme(), new Stretcherlayout(1), "Arraylist");
         frame.setCloseable(false);
         frame.addChild(new ActiveModules());
         frame.setPinneable(true);
@@ -216,102 +216,7 @@ public class KamiGUI extends GUI {
         information.setFontRenderer(fontRenderer);
         frames.add(frame);
 
-        frame = new Frame(getTheme(), new Stretcherlayout(1), "Text Radar");
-        Label list = new Label("");
-        DecimalFormat dfHealth = new DecimalFormat("#.#");
-        dfHealth.setRoundingMode(RoundingMode.HALF_UP);
-        StringBuilder healthSB = new StringBuilder();
-        list.addTickListener(() -> {
-            if (!list.isVisible()) return;
-            list.setText("");
-
-            Minecraft mc = Wrapper.getMinecraft();
-
-            if (mc.player == null) return;
-            List<EntityPlayer> entityList = mc.world.playerEntities;
-
-            Map<String, Integer> players = new HashMap<>();
-            for (Entity e : entityList) {
-                if (e.getName().equals(mc.player.getName())) continue;
-                String posString = (e.posY > mc.player.posY ? ChatFormatting.DARK_GREEN + "+" : (e.posY == mc.player.posY ? " " : ChatFormatting.DARK_RED + "-"));
-                float hpRaw = ((EntityLivingBase) e).getHealth() + ((EntityLivingBase) e).getAbsorptionAmount();
-                String hp = dfHealth.format(hpRaw);
-                healthSB.append(Command.SECTIONSIGN());
-                if (hpRaw >= 20) {
-                    healthSB.append("a");
-                } else if (hpRaw >= 10) {
-                    healthSB.append("e");
-                } else if (hpRaw >= 5) {
-                    healthSB.append("6");
-                } else {
-                    healthSB.append("c");
-                }
-                healthSB.append(hp);
-                players.put(ChatFormatting.GRAY + posString + " " + healthSB.toString() + " " + ChatFormatting.GRAY + e.getName(), (int) mc.player.getDistance(e));
-                healthSB.setLength(0);
-            }
-
-            if (players.isEmpty()) {
-                list.setText("");
-                return;
-            }
-
-            players = sortByValue(players);
-
-            for (Map.Entry<String, Integer> player : players.entrySet()) {
-                list.addLine(Command.SECTIONSIGN() + "7" + player.getKey() + " " + Command.SECTIONSIGN() + "8" + player.getValue());
-            }
-        });
-        frame.setCloseable(false);
-        frame.setPinneable(true);
-        frame.setMinimumWidth(75);
-        list.setShadow(true);
-        frame.addChild(list);
-        list.setFontRenderer(fontRenderer);
-        frames.add(frame);
-
-        frame = new Frame(getTheme(), new Stretcherlayout(1), "Entities");
-        Label entityLabel = new Label("");
-        frame.setCloseable(false);
-        entityLabel.addTickListener(new TickListener() {
-            Minecraft mc = Wrapper.getMinecraft();
-
-            @Override
-            public void onTick() {
-                if (mc.player == null || !entityLabel.isVisible()) return;
-
-                final List<Entity> entityList = new ArrayList<>(mc.world.loadedEntityList);
-                if (entityList.size() <= 1) {
-                    entityLabel.setText("");
-                    return;
-                }
-                final Map<String, Integer> entityCounts = entityList.stream()
-                        .filter(Objects::nonNull)
-                        .filter(e -> !(e instanceof EntityPlayer))
-                        .collect(Collectors.groupingBy(KamiGUI::getEntityName,
-                                Collectors.reducing(0, ent -> {
-                                    if (ent instanceof EntityItem)
-                                        return ((EntityItem)ent).getItem().getCount();
-                                    return 1;
-                                }, Integer::sum)
-                        ));
-
-                entityLabel.setText("");
-                entityCounts.entrySet().stream()
-                        .sorted(Map.Entry.comparingByValue())
-                        .map(entry -> TextFormatting.GRAY + entry.getKey() + " " + TextFormatting.DARK_GRAY + "x" + entry.getValue())
-                        .forEach(entityLabel::addLine);
-
-                //entityLabel.getParent().setHeight(entityLabel.getLines().length * (entityLabel.getTheme().getFontRenderer().getFontHeight()+1) + 3);
-            }
-        });
-        frame.addChild(entityLabel);
-        frame.setPinneable(true);
-        entityLabel.setShadow(true);
-        entityLabel.setFontRenderer(fontRenderer);
-        frames.add(frame);
-
-        frame = new Frame(getTheme(), new Stretcherlayout(1), "Coordinates");
+        frame = new Frame(getTheme(), new Stretcherlayout(1), "Coords");
         frame.setCloseable(false);
         frame.setPinneable(true);
         Label coordsLabel = new Label("");

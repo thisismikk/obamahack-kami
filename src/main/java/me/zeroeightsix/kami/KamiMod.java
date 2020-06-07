@@ -48,16 +48,16 @@ import java.util.Optional;
 public class KamiMod {
 
     public static final String MODID = "obamahack";
-    public static final String MODNAME = "OBAMAHACK";
+    public static final String MODNAME = "ObamaHack";
     public static final String MODVER = "b0.1";
 
-    public static final String KAMI_HIRAGANA = "\u7cbe\u6db2";
-    public static final String KAMI_KATAKANA = "\u7cbe\u6db2";
-    public static final String KAMI_KANJI = "\u7cbe\u6db2";
+    public static final String KAMI_HIRAGANA = "\u004f\u0062\u0061\u006d\u0061\u0048\u0061\u0063\u006b";
+    public static final String KAMI_KATAKANA = "\u004f\u0062\u0061\u006d\u0061\u0048\u0061\u0063\u006b";
+    public static final String KAMI_KANJI = "\u004f\u0062\u0061\u006d\u0061\u0048\u0061\u0063\u006b";
 
     private static final String KAMI_CONFIG_NAME_DEFAULT = "ObamaHackv2Config.json";
 
-    public static final Logger log = LogManager.getLogger("OBAMAHACK");
+    public static final Logger log = LogManager.getLogger("ObamaHack");
 
     public static final EventBus EVENT_BUS = new EventManager();
 

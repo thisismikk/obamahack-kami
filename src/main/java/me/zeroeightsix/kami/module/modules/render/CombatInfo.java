@@ -13,8 +13,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-@Module.Info(name="PvPInfo", category=Module.Category.RENDER)
-public class PvPInfo
+@Module.Info(name="Combat Info", category=Module.Category.RENDER)
+public class CombatInfo
         extends Module {
     private Setting<Float> x = this.register(Settings.f("InfoX", 0.0f));
     private Setting<Float> y = this.register(Settings.f("InfoY", 200.0f));
@@ -32,11 +32,11 @@ public class PvPInfo
         int bgreen = this.green.getValue();
         int cblue = this.blue.getValue();
         int color = drgb = ColourUtils.toRGBA(ared, bgreen, cblue, 255);
-        int totems = PvPInfo.mc.player.inventory.mainInventory.stream().filter(itemStack -> {
+        int totems = CombatInfo.mc.player.inventory.mainInventory.stream().filter(itemStack -> {
             if (itemStack.getItem() != Items.TOTEM_OF_UNDYING) return false;
             return true;
         }).mapToInt(ItemStack::getCount).sum();
-        if (PvPInfo.mc.player.getHeldItemOffhand().getItem() == Items.TOTEM_OF_UNDYING) {
+        if (CombatInfo.mc.player.getHeldItemOffhand().getItem() == Items.TOTEM_OF_UNDYING) {
             ++totems;
         }
         if (this.rainbow.getValue().booleanValue()) {
@@ -49,8 +49,6 @@ public class PvPInfo
             color = argb = ColourUtils.toRGBA(red, green, blue, 255);
         }
         {
-            this.cFontRenderer.drawStringWithShadow("FPS: " + Minecraft.getDebugFPS(), this.x.getValue().floatValue(), yCount - (float) this.cFontRenderer.getHeight() - 1.0f, color);
-            this.cFontRenderer.drawStringWithShadow("PING: " + (mc.getCurrentServerData() != null ? Long.valueOf(PvPInfo.mc.getCurrentServerData().pingToServer) : "0"), this.x.getValue().floatValue(), (yCount += 10.0f) - (float) this.cFontRenderer.getHeight() - 1.0f, color);
             this.cFontRenderer.drawStringWithShadow("CA: " + this.getCaura(), this.x.getValue().floatValue(), (yCount += 10.0f) - (float) this.cFontRenderer.getHeight() - 1.0f, color);
             this.cFontRenderer.drawStringWithShadow("KA: " + this.getKA(), this.x.getValue().floatValue(), (yCount += 10.0f) - (float) this.cFontRenderer.getHeight() - 1.0f, color);
             return;

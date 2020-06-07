@@ -42,14 +42,14 @@ public class DiscordPresence {
         DiscordPresence.rpc.Discord_Initialize(APP_ID, handlers, true, "");
         DiscordPresence.presence.startTimestamp = System.currentTimeMillis() / 1000L;
         if (versionPrivateStart) {
-            DiscordPresence.presence.details = MODVER + " - Looking at Main Menu";
+            DiscordPresence.presence.details = MODVER + " - lookin at the main menu";
         }
         else {
-            DiscordPresence.presence.details = "Main Menu";
+            DiscordPresence.presence.details = "main menu";
         }
         DiscordPresence.presence.state = "";
-        DiscordPresence.presence.largeImageKey = "kami";
-        DiscordPresence.presence.largeImageText = "pog";
+        DiscordPresence.presence.largeImageKey = "obamahack2";
+        DiscordPresence.presence.largeImageText = "poggers";
 
         DiscordPresence.rpc.Discord_UpdatePresence(DiscordPresence.presence);
         new Thread(() -> {
@@ -67,10 +67,10 @@ public class DiscordPresence {
                     players = 0;
                     if (mc.isIntegratedServerRunning()) {
                         if (versionPrivate) {
-                            details = MODVER + " - Playing Singleplayer";
+                            details = MODVER + " - playin singleplayer";
                         }
                         else {
-                            details = "Singleplayer";
+                            details = "singleplayer";
                         }
                     }
                     else if (mc.getCurrentServerData() != null) {
@@ -78,25 +78,25 @@ public class DiscordPresence {
                         if (!svr.serverIP.equals("")) {
                             if (userNamePrivate) {
                                 if (versionPrivate) {
-                                    details = MODVER + " - Playing as " + mc.player.getName();
+                                    details = MODVER + " - playin as " + mc.player.getName();
                                 } else {
                                     details = mc.player.getName();
                                 }
                             }
                             else {
                                 if (versionPrivate) {
-                                    details = MODVER + " - Playing Multiplayer";
+                                    details = MODVER + " - playin multiplayer";
                                 } else {
-                                    details = "Multiplayer";
+                                    details = "multiplayer";
                                 }
                             }
                             if (ipPrivate) {
                                 if (hpPrivate) {
                                     state = svr.serverIP + " (" + ((int) mc.player.getHealth() / 2) + " hearts)";
                                 } else if (coordsPrivate) {
-                                    state = svr.serverIP + " (" + ((int) mc.player.posX) + ", " + ((int) mc.player.posY) + ", " + ((int) mc.player.posZ);
+                                    state = svr.serverIP;
                                 } else if (coordsPrivate && hpPrivate) {
-                                    state = svr.serverIP + " (" + ((int) mc.player.getHealth() / 2) + " hearts) " + " (" + ((int) mc.player.posX) + ", " + ((int) mc.player.posY) + ", " + ((int) mc.player.posZ);
+                                    state = svr.serverIP;
                                 }
                                 else {
                                     state = svr.serverIP;
@@ -121,10 +121,10 @@ public class DiscordPresence {
                     }
                     else {
                         if (versionPrivate) {
-                            details = MODVER + " - obamahack2 b0.1"; // if you what change ver
+                            details = MODVER + " - obama is hot"; // if you what change ver
                         }
                         else {
-                            details = "Main Menu";
+                            details = "main menu";
                         }
                         state = "";
                     }
@@ -165,10 +165,10 @@ public class DiscordPresence {
                 int maxPlayers = 0;
                 if (mc.isIntegratedServerRunning()) {
                     if (versionPrivate) {
-                        details = MODVER + " - Playing Singleplayer";
+                        details = MODVER + " - playin singleplayer";
                     }
                     else {
-                        details = "Singleplayer";
+                        details = "singleplayer";
                     }
                 }
                 else if (mc.getCurrentServerData() != null) {
@@ -176,16 +176,16 @@ public class DiscordPresence {
                     if (!svr.serverIP.equals("")) {
                         if (userNamePrivate) {
                             if (versionPrivate) {
-                                details = MODVER + " - Playing as " + mc.player.getName();
+                                details = MODVER + " - playin as " + mc.player.getName();
                             } else {
                                 details = mc.player.getName();
                             }
                         }
                         else {
                             if (versionPrivate) {
-                                details = MODVER + " - Playing Multiplayer";
+                                details = MODVER + " - playin multiplayer";
                             } else {
-                                details = "Multiplayer";
+                                details = "multiplayer";
                             }
                         }
                         if (ipPrivate) {
@@ -215,10 +215,10 @@ public class DiscordPresence {
                 }
                 else {
                     if (versionPrivate) {
-                        details = MODVER + " - Looking at Main Menu";
+                        details = MODVER + " - lookin at the main menu";
                     }
                     else {
-                        details = "Main Menu";
+                        details = "main menu";
                     }
                     state = "";
                 }
