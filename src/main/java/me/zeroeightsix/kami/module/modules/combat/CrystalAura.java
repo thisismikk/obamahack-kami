@@ -147,7 +147,7 @@ public class CrystalAura extends Module {
             return;
 
         if (this.chatAlert.getValue()) {
-            Command.sendChatMessage("\u00A7 AutoCrystal ON");
+            Command.sendChatMessage("\u00A7 CrystalAura" + ChatFormatting.GREEN.toString() + " ON");
         }
 
     }
@@ -155,7 +155,7 @@ public class CrystalAura extends Module {
     public void onDisable() {
 
         if (chatAlert.getValue()) {
-            Command.sendChatMessage("\u00A7 AutoCrystal" + ChatFormatting.RED.toString() + " OFF");
+            Command.sendChatMessage("\u00A7 CrystalAura" + ChatFormatting.RED.toString() + " OFF");
         }
 
         resetRotation();
