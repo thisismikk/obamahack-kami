@@ -51,6 +51,10 @@ public class KamiFrameUI<T extends Frame> extends AbstractComponentUI<Frame> {
         glLineWidth(1.5f);
         RenderHelper.drawRectangle(0,0,component.getWidth(),component.getHeight());
 
+        glColor3f(.59f,.05f,.11f);
+        glLineWidth(1.5f);
+        RenderHelper.drawRectangle(0,0,component.getWidth(),ff.getStringHeight(component.getTitle())+ 1);
+
         GL11.glColor3f(1,1,1);
         ff.drawString(component.getWidth() / 2 - ff.getStringWidth(component.getTitle()) / 2, 1, component.getTitle());
 
