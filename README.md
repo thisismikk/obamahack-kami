@@ -1,4 +1,4 @@
-# ObamaHack v2
+# ObamaHack KAMI
 
  - Continued version of ObamaHack, based on KAMI.
  - As of now this client is no longer developed actively. Feel free to make PR's as you wish.
